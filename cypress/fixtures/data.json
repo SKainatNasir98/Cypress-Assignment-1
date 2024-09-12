@@ -1,0 +1,13 @@
+{
+  "login": {
+    "name": "standard_user",
+    "password": "secret_sauce"
+  },
+  "checkout": {
+    "fname": "John",
+    "lname": "Doe",
+    "zipcode": "12345"
+  }
+}
+
+
