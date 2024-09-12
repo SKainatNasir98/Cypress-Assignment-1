@@ -22,7 +22,7 @@ const CheckoutPage = new checkoutPage
 
                 //Product added to cart
                 HomePage.add_to_cart();
-                // fill the info form
+                // fill the required info form
                 CheckoutPage.fillInformation(data["checkout"]["fname"], data["checkout"]["lname"], data["checkout"]["zipcode"]);
             })
             
