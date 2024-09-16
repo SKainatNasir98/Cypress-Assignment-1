@@ -23,8 +23,8 @@ export class loginPage{
         
         const expectedUrl = `${baseUrl}/${homeUrl}`;
         cy.url().should('eq', expectedUrl);
-
+        cy.wait(5000);
+        //assertion based on title text
+        cy.get('[data-test="title"]').should('contain', 'Products');
     }
-    
-
 }
