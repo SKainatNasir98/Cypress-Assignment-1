@@ -3,13 +3,22 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "npm run cypress-test  || npm run posttest",
+    "cypress-test": "cypress run",
+    "posttest": "npm run mergereports && npm run generate-htmlreport",
+    "mergereports": "mochawesome-merge cypress/reports/mochawesome-reports/*.json > cypress/reports/output.json",
+    "generate-htmlreport": "marge cypress/reports/output.json --reportDir cypress/reports --reportFilename output.html --inline"
   },
   "author": "",
   "license": "ISC",
   "description": "",
   "devDependencies": {
     "cypress": "^13.14.2",
-    "cypress-xpath": "^2.0.1"
+    
+    "mochawesome-merge": "^4.3.0"
+  },
+  "dependencies": {
+    "cypress-downloadfile": "^1.2.4",
+    "rimraf": "^6.0.1"
   }
 }
